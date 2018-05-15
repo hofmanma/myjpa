@@ -19,5 +19,7 @@ public class program implements Serializable {
 
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long PROGRAMID;   
+	private Long PROGID;
+	private Long AUFTRID;
+	private Long SONGID;
 }

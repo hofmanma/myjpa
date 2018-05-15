@@ -21,21 +21,20 @@ public class musiker implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	long MUSIKERID;
-	
-	String NAME;
-	String VORNAME;
-	String STRASSE;
-	String PLZ;
-	String ORT;
-	String EMAIL;
-	String TEL;
-	String USERNAME;
-	String PASSWORD;
+	private long MUSIKERID;
+	private String NAME;
+	private String VORNAME;
+	private String STRASSE;
+	private String PLZ;
+	private String ORT;
+	private String EMAIL;
+	private String TEL;
+	private String USERNAME;
+	private String PASSWORD;
 	  
 	@Override
 	public String toString() {
 		
-		return "Schrubbed by " + VORNAME + " " + NAME ;
+		return VORNAME + " " + NAME ;
 	}
 }

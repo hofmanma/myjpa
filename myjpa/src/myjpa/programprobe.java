@@ -19,5 +19,7 @@ public class programprobe implements Serializable {
 
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long PROGRAMPROBEID;	
+	private Long PROGPROBEID;
+	private Long SONGID;
+	private Long PROBEID;
 }

@@ -20,5 +20,16 @@ public class auftritt implements Serializable {
 
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long AUFTRITTID;
+	private Long AUFTRID;
+	private String DATUM;
+	private String ORT;
+	private String DESCRIPTION;
+	private String NOTES;
+	private String FILENAME;
+	
+	@Override
+	public String toString() {
+		
+		return "Auftritt am " + DATUM + " in " + ORT ;
+	}
 }

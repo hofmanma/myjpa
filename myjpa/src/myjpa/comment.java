@@ -17,4 +17,9 @@ public class comment implements Serializable {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long COMMENTID;
+	private String DATUM;
+	private String USERNAME;
+	private Long  SONGID;
+	private Long  AUFTRAGID;
+	private String TEXTSTR;
 }

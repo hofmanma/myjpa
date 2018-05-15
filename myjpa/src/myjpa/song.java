@@ -20,4 +20,17 @@ public class song implements Serializable {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long SONGID;	
+	private String TITLE;
+	private Long ORDERNMB;
+	private String NOTES;
+	private String DESCRIPTION;
+	private String FILENAME;
+	private String CATEGORY;
+	private String SUBCATEGORY;
+	
+	@Override
+	public String toString() {
+		
+		return TITLE;
+	}
 }

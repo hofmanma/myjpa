@@ -21,4 +21,13 @@ public class probe implements Serializable {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long PROBEID;
+	private String DATUM;
+	private String ORT;
+	private String DESCRIPTION;
+	
+	@Override
+	public String toString() {
+		
+		return "Probe am " + DATUM + " in " + ORT;
+	}
 }
