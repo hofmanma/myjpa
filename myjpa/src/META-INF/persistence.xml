@@ -3,6 +3,12 @@
 	<persistence-unit name="myjpa">
 		<class>myjpa.musiker</class>
 		<class>myjpa.dokument</class>
+		<class>myjpa.auftritt</class>
+		<class>myjpa.comment</class>
+		<class>myjpa.probe</class>
+		<class>myjpa.program</class>
+		<class>myjpa.programprobe</class>
+		<class>myjpa.song</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" 
 					  value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
