@@ -1,13 +1,10 @@
 package myjpa;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -25,6 +22,9 @@ public class probe implements Serializable {
 	private String ORT;
 	private String DESCRIPTION;
 	
+    @ManyToMany(mappedBy = "proben")
+    private List<song> songs = new ArrayList<>();
+    
 	@Override
 	public String toString() {
 		

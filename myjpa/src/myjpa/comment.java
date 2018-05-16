@@ -22,4 +22,12 @@ public class comment implements Serializable {
 	private Long  SONGID;
 	private Long  AUFTRAGID;
 	private String TEXTSTR;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "SONGID", referencedColumnName="SONGID", insertable=false, updatable=false)
+	private song song;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "AUFTRID", referencedColumnName="AUFTRID", insertable=false, updatable=false)
+	private auftritt auftritt;
 }

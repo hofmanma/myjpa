@@ -1,13 +1,9 @@
 package myjpa;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
 import javax.persistence.*;
 
 /**
@@ -27,6 +23,12 @@ public class auftritt implements Serializable {
 	private String NOTES;
 	private String FILENAME;
 	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "auftritt")
+    private List<comment> comments;
+    
+    @ManyToMany(mappedBy = "auftritte")
+    private List<song> songs = new ArrayList<>();
+    
 	@Override
 	public String toString() {
 		

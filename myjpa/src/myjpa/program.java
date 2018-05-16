@@ -22,4 +22,5 @@ public class program implements Serializable {
 	private Long PROGID;
 	private Long AUFTRID;
 	private Long SONGID;
+	
 }
