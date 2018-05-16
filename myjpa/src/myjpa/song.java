@@ -26,30 +26,31 @@ public class song implements Serializable {
 	private String SUBCATEGORY;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "song")
-    private List<comment> comments;
-	
+    private List<dokument> dokuments = new ArrayList<dokument>();
+    
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "song")
+    private List<comment> comments = new ArrayList<comment>();
     ///////////////////////////////////////
     // Autritte, bei dem ein Song gespielt
     // wurde.
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "program",
             joinColumns = @JoinColumn(name = "SONGID", 
             						  referencedColumnName="SONGID" ),
             inverseJoinColumns = @JoinColumn(name = "PROGID", 
             								 referencedColumnName="PROGID" )
      )
-     private List<auftritt> auftritte = new ArrayList<>();
-    
+     private List<auftritt> auftritte = new ArrayList<auftritt>();
      /////////////////////////////////////////
      // Proben, in denen ein Song geübt wurde.
-     @ManyToMany
+     @ManyToMany(fetch = FetchType.LAZY)
      @JoinTable(name = "programprobe",
              joinColumns = @JoinColumn( name = "SONGID", 
              						    referencedColumnName="SONGID"),
              inverseJoinColumns = @JoinColumn( name = "PROBEID", 
              							       referencedColumnName="PROBEID")
       )
-      private List<probe> proben = new ArrayList<>();
+      private List<probe> proben = new ArrayList<probe>();
     
 	@Override
 	public String toString() {
@@ -59,7 +60,7 @@ public class song implements Serializable {
 	
 	public List<comment> getComments(){
 		
-		return null;
+		return comments;
 	}
 	
 	public List<auftritt> getAuftritte(){
@@ -70,5 +71,10 @@ public class song implements Serializable {
 	public List<probe> getProben(){
 		
 		return proben;
+	}
+	
+	public List<dokument> getDokumente(){
+		
+		return dokuments;
 	}
 }

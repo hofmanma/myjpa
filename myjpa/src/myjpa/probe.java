@@ -23,7 +23,7 @@ public class probe implements Serializable {
 	private String DESCRIPTION;
 	
     @ManyToMany(mappedBy = "proben")
-    private List<song> songs = new ArrayList<>();
+    private List<song> songs = new ArrayList<song>();
     
 	@Override
 	public String toString() {

@@ -26,8 +26,8 @@ public class auftritt implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "auftritt")
     private List<comment> comments;
     
-    @ManyToMany(mappedBy = "auftritte")
-    private List<song> songs = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "auftritte")
+    private List<song> songs = new ArrayList<song>();
     
 	@Override
 	public String toString() {
